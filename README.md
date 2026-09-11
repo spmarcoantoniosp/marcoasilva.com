@@ -33,3 +33,13 @@ git push
 | A     | @    | 185.199.110.153   |
 | A     | @    | 185.199.111.153   |
 | CNAME | www  | USUARIO.github.io |
+
+## Regenerar o card og:image
+
+`og-card.source.html` + `inter.css` produzem `og-card.png` (1200x630):
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+  --window-size=1200,630 --screenshot=og-card.png og-card.source.html
+```
