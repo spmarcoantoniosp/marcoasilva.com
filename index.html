@@ -44,6 +44,8 @@
   --f:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --fs-body:19px; --fs-small:16.5px; --fs-lbl:13.5px;
   --wrap:1360px; --pad:clamp(22px,5vw,72px);
+  /* recuo que o .wrap ganha ao centralizar; 0 enquanto ele encosta nas bordas */
+  --wrap-off:max(0px,(100vw - 1360px)/2);
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -126,7 +128,7 @@ p{max-width:64ch}
   line-height:1.5;font-weight:600;color:var(--on-dark);max-width:44ch}
 .cta{display:flex;flex-wrap:wrap;gap:16px}
 .hero-vis{position:absolute;inset:0;z-index:2;pointer-events:none}
-.conv{position:absolute;top:50%;left:calc(var(--pad) + min(600px,42vw) + 3vw);right:calc(4.5vw + clamp(240px,21vw,380px));width:auto;height:auto;transform:translateY(-50%);overflow:visible}
+.conv{position:absolute;top:50%;left:calc(var(--wrap-off) + var(--pad) + min(600px,42vw) + 3vw);right:calc(4.5vw + clamp(240px,21vw,380px));width:auto;height:auto;transform:translateY(-50%);overflow:visible}
 .hero-photo{position:absolute;top:50%;right:4.5vw;width:clamp(240px,21vw,380px);transform:translateY(-46%);pointer-events:auto}
 .hero-photo img{width:100%;aspect-ratio:613/812;object-fit:cover;filter:contrast(1.04)}
 .hero-photo figcaption{position:absolute;left:0;bottom:0;transform:translateY(100%);background:var(--ink);color:var(--on-dark);
